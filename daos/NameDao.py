@@ -3,7 +3,6 @@ import psycopg2
 
 class NameDao(object):
     def __init__(self, db: str, username: str, password: str):
-        print(password)
         self.connection = psycopg2.connect(dbname=db, user=username, password=password)
 
     def get_name(self):
