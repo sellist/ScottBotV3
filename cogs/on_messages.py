@@ -43,6 +43,14 @@ class NameCommands(commands.Cog):
         await ctx.message.channel.send(self.nameService.get_name())
 
     @commands.command()
+    async def couple(self,ctx):
+        first = self.nameService.get_name()
+        second = self.nameService.get_name()
+        await ctx.send(
+            f"{first} and {second}"
+        )
+
+    @commands.command()
     async def namehelp(self, ctx):
         await ctx.send(
             """Use !name to generate a name \nUse !addname to add a name to the list of names to be generated from""")
